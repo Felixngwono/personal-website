@@ -1,0 +1,95 @@
+{% extends "header.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-gray-900 text-white py-6">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl font-bold">My Blog</h1>
+      <p class="mt-2 text-lg">Sharing insights, ideas, and experiences.</p>
+    </div>
+  </header>
+
+  <!-- Blog Section -->
+  <section id="blog" class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Latest Blog Posts</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Blog Post 1 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="https://via.placeholder.com/600x400" alt="Blog Post 1" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Understanding Tailwind CSS</h3>
+            <p class="text-gray-600 mb-4">A beginner's guide to mastering Tailwind CSS for modern web development.</p>
+            <a href="#" class="text-blue-500 hover:underline font-bold">Read More →</a>
+          </div>
+        </div>
+        
+        <!-- Blog Post 2 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="https://via.placeholder.com/600x400" alt="Blog Post 2" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">10 Tips for Better Web Design</h3>
+            <p class="text-gray-600 mb-4">Explore essential tips to create visually appealing and user-friendly websites.</p>
+            <a href="#" class="text-blue-500 hover:underline font-bold">Read More →</a>
+          </div>
+        </div>
+        
+        <!-- Blog Post 3 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="https://via.placeholder.com/600x400" alt="Blog Post 3" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Responsive Design Principles</h3>
+            <p class="text-gray-600 mb-4">Learn how to make your websites look great on any device using responsive design techniques.</p>
+            <a href="#" class="text-blue-500 hover:underline font-bold">Read More →</a>
+          </div>
+        </div>
+        
+        <!-- Blog Post 4 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="https://via.placeholder.com/600x400" alt="Blog Post 4" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Introduction to JavaScript Frameworks</h3>
+            <p class="text-gray-600 mb-4">An overview of popular JavaScript frameworks like React, Angular, and Vue.</p>
+            <a href="#" class="text-blue-500 hover:underline font-bold">Read More →</a>
+          </div>
+        </div>
+        
+        <!-- Blog Post 5 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="https://via.placeholder.com/600x400" alt="Blog Post 5" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">CSS Grid vs. Flexbox</h3>
+            <p class="text-gray-600 mb-4">When to use CSS Grid and Flexbox for layout design in web development.</p>
+            <a href="#" class="text-blue-500 hover:underline font-bold">Read More →</a>
+          </div>
+        </div>
+        
+        <!-- Blog Post 6 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="https://via.placeholder.com/600x400" alt="Blog Post 6" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Web Performance Optimization</h3>
+            <p class="text-gray-600 mb-4">Tips and tricks to improve the performance and speed of your website.</p>
+            <a href="#" class="text-blue-500 hover:underline font-bold">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+ {% include "footer.html" %}
+
+</body>
+</html>
+{% endblock content %}

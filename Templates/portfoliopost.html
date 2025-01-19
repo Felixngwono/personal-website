@@ -1,0 +1,95 @@
+{% extends "header.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Hero Section -->
+  <header class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold">Hello, I'm Felix Odhiambo</h1>
+      <p class="mt-4 text-xl">A Frontend Developer passionate about building beautiful and functional websites.</p>
+      <a href="#projects" class="mt-6 inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg">View My Work</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-16">
+    <div class="container mx-auto px-6 md:flex items-center">
+      <div class="md:w-1/2">
+        <img src="https://via.placeholder.com/400" alt="About Me" class="rounded-lg shadow-md">
+      </div>
+      <div class="md:w-1/2 mt-8 md:mt-0 md:pl-12">
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+        <p class="text-lg">I specialize in creating modern, responsive websites and applications. With a keen eye for design and a passion for coding, I aim to deliver exceptional digital experiences.</p>
+        <a href="#contact" class="mt-6 inline-block bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="bg-gray-200 py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">My Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <img src="https://via.placeholder.com/600x400" alt="Project 1" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Project 1</h3>
+            <p class="mt-2 text-gray-600">Description of the project goes here. A brief summary of what it does.</p>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <img src="https://via.placeholder.com/600x400" alt="Project 2" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Project 2</h3>
+            <p class="mt-2 text-gray-600">Description of the project goes here. A brief summary of what it does.</p>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <img src="https://via.placeholder.com/600x400" alt="Project 3" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Project 3</h3>
+            <p class="mt-2 text-gray-600">Description of the project goes here. A brief summary of what it does.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
+      <form action="#" class="max-w-lg mx-auto bg-white shadow-md rounded-lg p-8">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold">Name</label>
+          <input type="text" id="name" class="w-full mt-2 p-3 border rounded-lg" placeholder="Your Name">
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-bold">Email</label>
+          <input type="email" id="email" class="w-full mt-2 p-3 border rounded-lg" placeholder="Your Email">
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-gray-700 font-bold">Message</label>
+          <textarea id="message" class="w-full mt-2 p-3 border rounded-lg" rows="5" placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <{% include "footer.html" %}
+</body>
+</html>
+{% endblock content %}

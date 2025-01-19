@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header>
+    <nav class="bg-blue-700 text-white">
+      <div class="container mx-auto flex items-center justify-between px-6 py-4">
+        <!-- Logo -->
+        <a class="text-lg font-bold" href="#">StoryTeller The Programmer</a>
+        
+        <!-- Toggle Button for Mobile -->
+        <button class="lg:hidden block text-white focus:outline-none" id="nav-toggle">
+          <svg class="h-6 w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="hidden lg:flex space-x-4 items-center" id="nav-menu">
+          <a href="{% url 'me' %}" class="hover:text-gray-300">Home</a>
+          <a href="{% url 'contactus' %}" class="hover:text-gray-300">Contact Us</a>
+          <a href="#" class="hover:text-gray-300">About Us</a>
+          <a href="{% url 'blog' %}" class="hover:text-gray-300">Blog</a>
+          <a href="{% url 'portfolio' %}" class="hover:text-gray-300">Portfolio</a>
+          <a href="{% url 'login' %}" class="hover:text-gray-300">Login</a>
+          <a href="{% url 'signup' %}" class="hover:text-gray-300">Sign Up</a>
+          <a href="{% url 'logoutuser' %}" class="hover:text-gray-300">Logout</a>
+
+          {% if request.user.is_superuser %}
+          <span class="font-bold">Admin Dashboard</span>
+          {% elif request.user.is_enduser %}
+          <span class="text-gray-500">User Dashboard</span>
+          {% endif %}
+        </div>
+
+        <!-- Search Form -->
+        <form class="hidden lg:flex space-x-2" action="//" method="GET">
+          <input class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-blue-400" type="search" name="q" placeholder="Search" required>
+          <button class="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600" type="submit">Search
+          </button>
+        </form>
+        
+      </div>
+    </nav>
+  </header>
+  <main class="container mx-auto px-6 py-4">
+    {% block content %}
+    
+  </main>
+
+  <script>
+    // Toggle for mobile navigation
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
+{% endblock content %}
