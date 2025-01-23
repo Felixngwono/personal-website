@@ -4,14 +4,14 @@
 <link rel="stylesheet" href="{% static 'register.css' %}">
 
 <div class="flex">
-    <div class="w-1/2 h-screen bg-cover bg-no-repeat" style="background-image: url({% static 'images/Fel14.jpg' %});"></div>
+    <div class="w-1/2 h-screen bg-cover bg-no-repeat " style="background-image: url({% static 'images/Fel14.jpg' %});"></div>
     
     <div class="w-1/2 flex justify-center px-6 py-8">
         <section class="bg-green-100 dark:bg-gray-900 w-full">
             <div class="w-full items-center justify-center mb-6 text-2 font-semibold text-gray-900 dark:text-white">
                 <a href="#" class="flex items-cover mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
                     <img class="w-8 h-8 mr-2" src="{% static 'images/Fel16.jpg' %}" alt="logo">
-                    Government Tracker
+                    FelloMarley Foundation
                 </a>
                 <div class="w-full bg-white dark:border xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                     <div>
@@ -19,31 +19,42 @@
                             Create an account
                         </h1>
                         <form class="space-y-4 md:space-y-6" action="" method="POST" enctype="multipart/form-data">
-                            {% csrf_token %}
+{% csrf_token %}
                            <div>
                                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
                                 {% render_field form.name class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Name" required="" %}
                             </div>
+                           
+
                             <div>
-                                <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Username</label>
-                                {% render_field form.username class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Username" required="" %}
+                                <label for="birthdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your birthdate</label>
+                                {% render_field form.birthdate class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter birthdate" required="" %}
                             </div>
+
+                            <div>
+                                <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your gender</label>
+                                {% render_field form.gender class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="gender" required="birthdate" %}
+                            </div>
+
+
                             <div>
                                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                                 {% render_field form.email class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="email@gmail.com" required="" %}
                             </div>
                             <div>
                                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" type="file" for="file_input">Upload file</label>
-                                {% render_field form.profile class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" %}
+                                {% render_field form.profilepic class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" %}
                             </div>
                             <div>
                                 <label for="bio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">End User</label>
                                 {% render_field form.is_enduser class="block w-full" %}
                             </div>
+
                             <div>
-                                <label for="bio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Bio</label>
-                                {% render_field form.bio class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Biography" required="" %}
+                                <label for="bio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your bio</label>
+                                {% render_field form.bio class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="bio" required="birthdate" %}
                             </div>
+                          
                             <div>
                                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                                 {% render_field form.password1 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Password" required="" %}

@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import BlogPost, PortfolioItem, User, contact
+from .models import BlogPost, PortfolioItem, User, contact, events
 from django.contrib.auth.forms import UserCreationForm
 
 class  MyUserCreationForm(UserCreationForm):
@@ -26,3 +26,7 @@ class  ContactusForm(ModelForm):
         fields = '__all__'
 
 
+class eventsForm(ModelForm):
+    class Meta:
+        model=events
+        fields='__all__'

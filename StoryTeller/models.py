@@ -12,7 +12,7 @@ class User(models.Model):
     name= models.CharField(max_length=100)
     bio=models.TextField()
     profilepic=models.ImageField(upload_to='profile',default="avatar.png")
-    birthdate=models.DateTimeField(auto_now=True)
+    birthdate=models.DateField(auto_now=False, null=True, blank=True)
     gender=models.CharField(max_length=10,choices=mygender)
     email= models.EmailField()
     is_superuser=models.BooleanField(default=False)
@@ -47,5 +47,14 @@ class PortfolioItem(models.Model):
     
     def __str__(self):
         return self.title
+
+
+class events(models.Model):
+    title=models.CharField(max_length=100)
+    description=models.TextField()
+    image=models.ImageField(upload_to='events_images/')
+    date=models.DateTimeField()
     
+    def __str__(self):
+        return self.title
     

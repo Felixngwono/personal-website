@@ -1,10 +1,15 @@
+from django.contrib.admin.templatetags.admin_modify import register
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from urllib3 import request
+
 from StoryTeller.models import BlogPost, PortfolioItem, User
-from .forms import BlogPostForm, MyUserCreationForm, PortfolioForm,ContactusForm
+from .forms import BlogPostForm, MyUserCreationForm, PortfolioForm, ContactusForm, eventsForm
+
+
 # Create your views here.
 
 def me(request):
@@ -98,9 +103,20 @@ def ContactusPage(request):
             form = ContactusForm(request.POST)
             if form.is_valid():
                 form.save()
-                return redirect('index')
-            
-            return redirect('contactus')
-        
+                return redirect('index')     
     context={'form':form}
     return render(request, 'contact_us.html',context)
+
+
+def events(request):
+    form= eventsForm()
+    if request.method=='POST':
+        form=eventsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    context={'form':form}
+    return render(request, 'events.html',context)
+
+def about(request):
+    return render(request,'about.html')
