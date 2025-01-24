@@ -1,5 +1,95 @@
-{% extends "header.html" %}
+{% include "header.html" %}
+{% load static %}
 {% block content %}
-<h1>About FelloMarley Foundation</h1>
+<script src='about.js'></script>
+
+<section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-4xl font-bold text-gray-800">About Me</h2>
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          Let me share a bit about who I am and what drives me.
+        </p>
+      </div>
+      
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <!-- Left: Profile Image -->
+        <div class="flex justify-center">
+          <img 
+            src="{% static 'images/Fel14.jpg' %}" 
+            alt="Profile Picture" 
+            class="w-72 h-72 rounded-full shadow-lg object-cover"
+          >
+        </div>
+        
+        <!-- Right: About Me Content -->
+        <div>
+          <!-- Introduction -->
+          <h3 class="text-2xl font-semibold text-gray-800">Hi, I'm Felix Odhiambo!</h3>
+          <p class="mt-4 text-gray-600">
+            I’m a Bachelor of Computer Science graduate with a passion for technology, problem-solving, and lifelong learning. I come from a large and loving family of eight, which has been my foundation and support system.
+          </p>
+          <br>
+          <div class="mt-4">
+            <a href="{% url 'gallery' %}" class="inline-block px-6 py-3 text-white bg-green-600 rounded-lg font-medium shadow-md hover:bg-green-500 transition focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">View Gallery</a>
+          </div>
+
+          <!-- Family Background -->
+          <h4 class="mt-8 text-xl font-semibold text-gray-800">My Roots</h4>
+          <p class="mt-2 text-gray-600">
+            Born to my incredible parents, John Olao and Grace Anyango, and blessed with wonderful siblings, I’ve always valued family as the core of my journey. I am also a proud grandson to Olao and Omollo Masella, whose values and stories continue to inspire me every day.
+          </p>
+          <div class="mt-2">
+            <a href="#" class="text-blue-600 hover:underline">Read more about my family</a>
+          </div>
+
+          <!-- Education -->
+          <h4 class="mt-8 text-xl font-semibold text-gray-800">My Education</h4>
+          <p class="mt-2 text-gray-600">
+            My academic journey began at Ratta Primary School, followed by Ratta Secondary School, and culminated in earning my Bachelor’s degree from Kabarak University. These experiences have shaped my passion for learning and growth.
+          </p>
+
+          <!-- Professional Aspirations -->
+          <h4 class="mt-8 text-xl font-semibold text-gray-800">My Passion</h4>
+          <p class="mt-2 text-gray-600">
+            My love for computer science drives me to explore innovative solutions and create impactful projects. I’m constantly looking for opportunities to grow, collaborate, and make a meaningful difference in the tech world.
+          </p>
+
+          <!-- Personal Interests -->
+          <h4 class="mt-8 text-xl font-semibold text-gray-800">Outside of Tech</h4>
+          <p class="mt-2 text-gray-600">
+            Beyond my professional life, I enjoy spending quality time with family, diving into new challenges, and connecting with people from different walks of life. These moments keep me grounded and inspired.
+          </p>
+
+          <!-- Call to Action -->
+          <div class="mt-10">
+            <a 
+              href="{% url 'contactus' %}" 
+              class="inline-block px-6 py-3 text-white bg-blue-600 rounded-lg font-medium shadow-md hover:bg-blue-500 transition"
+            >
+              Connect with Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="bg-white py-16">
+    <div class="container mx-auto px-6 lg:px-8">
+        <h3 class="text-3xl font-bold text-gray-800 text-center">Meet My Siblings</h3>
+        <p class="text-gray-600 text-center mt-4">Click on each name to learn more about my siblings.</p>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {% for sibling in siblings %}
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h4 class="text-lg font-semibold text-gray-800">{{ sibling.name }}</h4>
+                <p class="text-gray-600 mt-2">{{ sibling.short_description }}</p>
+                <a href="{% url 'sibling_detail' sibling.id %}" class="text-blue-600 hover:underline mt-4 block">Read More</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 {% include "footer.html" %}
 {% endblock content %}
