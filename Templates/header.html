@@ -57,14 +57,20 @@
                 <li>
                     <a href="{% url 'events' %}" class="block text-white py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Events</a>
                 </li>
-                {%if request.user.is_enduser%}
-                <li>
-                  <a href="{% url 'login' %}" class="block text-white py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">login</a>
-                </li>
-                {% endif %}
-                <li>
+
+                {% if request.user.is_superuser%}
+                 <li>
+                   <a href="{% url 'admins' %}" class="block text-white py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Admins</a>
+                 </li>
+
+                 {% endif %}
+
+              <li>
                     <a href="{% url 'logoutuser' %}" class="block text-white py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-blue dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Logout</a>
                 </li>
+
+                
+
                 {% if request.user.is_superuser %}
                 <li class="block py-2 pr-4 pl-3 text-green-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-blue lg:dark:hover:bg-transparent dark:border-gray-700">Admin Dashboard</li>
                 

@@ -1,23 +1,134 @@
 {% extends "header.html" %}
 {% load static %}
 {% block content %}
+<script src="https://cdn.tailwindcss.com"></script>
 
+<!-- Main Container -->
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
 
-    <main>
-      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        Yud sisi mar manyo mari
-        
+    <!-- Hero Section -->
+    <section class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+        <div class="max-w-screen-xl mx-auto px-4 py-16 text-center">
+            <h1 class="text-4xl font-extrabold sm:text-5xl">
+                Welcome to My Personal Website
+            </h1>
+            <p class="mt-4 text-lg">
+                Hi, I'm <strong>Felix Odhiambo</strong>. A passionate computer scientist and software developer. 
+                Explore my projects, achievements, and contact me for collaborations.
+            </p>
+            <div class="mt-8 flex justify-center">
+                <a href="#portfolio" class="px-6 py-3 text-sm font-medium bg-green-500 text-white rounded-full hover:bg-green-600">
+                    View My Work
+                </a>
+                <a href="#contact" class="ml-4 px-6 py-3 text-sm font-medium border border-gray-300 rounded-full hover:bg-gray-100">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <video class="w-full" autoplay controls>
-          <source src="/docs/videos/flowbite.mp4" type="video/mp4">
-         
-        </video>
-        
+    <!-- About Section -->
+    <section id="about" class="bg-gray-100 dark:bg-gray-700 py-12">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold">About Me</h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">
+                    Learn more about who I am and my journey.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="https://via.placeholder.com/500" alt="Profile Image" class="rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <p class="text-lg">
+                        I'm a Bachelor of Computer Science graduate with expertise in project management, software development, and technology solutions. My passion lies in creating impactful systems and solving real-world problems with technology.
+                    </p>
+                    <p class="mt-4">
+                        When I'm not coding, I enjoy exploring new technologies, writing blogs, and spending quality time with my family.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      </div>
-    </main>
-  </div>
-  
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="bg-white dark:bg-gray-800 py-12">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold">My Portfolio</h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">
+                    Check out some of the projects I've worked on.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Example Project Cards -->
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold">Project 1</h3>
+                    <p class="text-sm mt-2">
+                        A project description goes here. Highlight its purpose and technology stack.
+                    </p>
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold">Project 2</h3>
+                    <p class="text-sm mt-2">
+                        A project description goes here. Highlight its purpose and technology stack.
+                    </p>
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold">Project 3</h3>
+                    <p class="text-sm mt-2">
+                        A project description goes here. Highlight its purpose and technology stack.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-{% include "footer.html" %}
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-100 dark:bg-gray-700 py-12">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold">Contact Me</h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">
+                    Feel free to reach out via the form below or connect with me on social media.
+                </p>
+            </div>
+            <div class="max-w-screen-md mx-auto">
+                <form action="#" method="post" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium">Your Name</label>
+                        <input type="text" id="name" name="name" class="w-full mt-1 p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium">Your Email</label>
+                        <input type="email" id="email" name="email" class="w-full mt-1 p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full mt-1 p-2 border border-gray-300 rounded-md"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="px-6 py-3 bg-green-500 text-white rounded-full hover:bg-green-600">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-6">
+        <div class="max-w-screen-xl mx-auto px-4 text-center">
+            <p>&copy; 2025 Felix Odhiambo. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="#" class="text-gray-300 hover:text-white mx-2">LinkedIn</a> | 
+                <a href="#" class="text-gray-300 hover:text-white mx-2">GitHub</a> | 
+                <a href="#" class="text-gray-300 hover:text-white mx-2">Twitter</a>
+            </p>
+        </div>
+    </footer>
+
+</div>
 {% endblock content %}

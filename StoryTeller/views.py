@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from urllib3 import request
 
-from StoryTeller.models import BlogPost, PortfolioItem, User
+from StoryTeller.models import BlogPost, PortfolioItem, User, contact
 from .forms import BlogPostForm, MyUserCreationForm, PortfolioForm, ContactusForm, eventsForm
 
 
@@ -123,3 +123,13 @@ def about(request):
 
 def gallery(request):
     return render(request,'gallery.html')
+
+def AdminsDashboard(request):
+    contactinfo=contact.objects.all()
+    userinfo=User.objects.all()
+    context={'contactinfo':contactinfo,
+             'userinfo':userinfo}
+
+    return render(request,'admins.html',context)
+
+

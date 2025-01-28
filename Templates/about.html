@@ -2,8 +2,8 @@
 {% load static %}
 {% block content %}
 <script src='about.js'></script>
-
-<section class="bg-gray-100 py-16">
+<div style="background-color: maroon">
+  <section class="bg-gray-100 py-16">
     <div class="container mx-auto px-6 lg:px-8">
       <div class="text-center">
         <h2 class="text-4xl font-bold text-gray-800">About Me</h2>
@@ -18,7 +18,7 @@
           <img 
             src="{% static 'images/Fel14.jpg' %}" 
             alt="Profile Picture" 
-            class="w-72 h-72 rounded-full shadow-lg object-cover"
+            class="w-82 h-62 rounded-full shadow-lg object-cover"
           >
         </div>
         
@@ -29,7 +29,6 @@
           <p class="mt-4 text-gray-600">
             I’m a Bachelor of Computer Science graduate with a passion for technology, problem-solving, and lifelong learning. I come from a large and loving family of eight, which has been my foundation and support system.
           </p>
-          <br>
           <div class="mt-4">
             <a href="{% url 'gallery' %}" class="inline-block px-6 py-3 text-white bg-green-600 rounded-lg font-medium shadow-md hover:bg-green-500 transition focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">View Gallery</a>
           </div>
@@ -39,8 +38,8 @@
           <p class="mt-2 text-gray-600">
             Born to my incredible parents, John Olao and Grace Anyango, and blessed with wonderful siblings, I’ve always valued family as the core of my journey. I am also a proud grandson to Olao and Omollo Masella, whose values and stories continue to inspire me every day.
           </p>
-          <div class="mt-2">
-            <a href="#" class="text-blue-600 hover:underline">Read more about my family</a>
+          <div class="mt-10">
+            <a href="{% url 'contactus' %}" class="inline-block px-6 py-3 text-white bg-violet-600 rounded-lg font-medium shadow-md hover:bg-blue-500 transition">Read more about my family</a>
           </div>
 
           <!-- Education -->
@@ -63,33 +62,28 @@
 
           <!-- Call to Action -->
           <div class="mt-10">
-            <a 
-              href="{% url 'contactus' %}" 
-              class="inline-block px-6 py-3 text-white bg-blue-600 rounded-lg font-medium shadow-md hover:bg-blue-500 transition"
-            >
-              Connect with Me
-            </a>
+            <a href="{% url 'contactus' %}" class="inline-block px-6 py-3 text-white bg-blue-600 rounded-lg font-medium shadow-md hover:bg-blue-500 transition">Connect with Me</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-<section class="bg-white py-16">
+  <section class="bg-white py-16">
     <div class="container mx-auto px-6 lg:px-8">
-        <h3 class="text-3xl font-bold text-gray-800 text-center">Meet My Siblings</h3>
-        <p class="text-gray-600 text-center mt-4">Click on each name to learn more about my siblings.</p>
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {% for sibling in siblings %}
-            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                <h4 class="text-lg font-semibold text-gray-800">{{ sibling.name }}</h4>
-                <p class="text-gray-600 mt-2">{{ sibling.short_description }}</p>
-                <a href="{% url 'sibling_detail' sibling.id %}" class="text-blue-600 hover:underline mt-4 block">Read More</a>
-            </div>
-            {% endfor %}
+      <h3 class="text-3xl font-bold text-gray-800 text-center">Meet Our Family</h3>
+      <p class="text-gray-600 text-center mt-4">Click on each name to learn more about my family.</p>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {% for sibling in siblings %}
+        <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+          <h4 class="text-lg font-semibold text-gray-800">{{ sibling.name }}</h4>
+          <p class="text-gray-600 mt-2">{{ sibling.short_description }}</p>
+          <a href="{% url 'sibling_detail' sibling.id %}" class="text-blue-600 hover:underline mt-4 block">Read More</a>
         </div>
+        {% endfor %}
+      </div>
     </div>
-</section>
+  </section>
+</div>
 
-{% include "footer.html" %}
 {% endblock content %}

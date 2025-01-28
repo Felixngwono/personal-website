@@ -1,3 +1,5 @@
+{% extends "header.html" %}
+{% block content %}
 <script src="https://cdn.tailwindcss.com"></script>
 {% load static %}
 <section class="bg-gray-100 py-16">
@@ -5,7 +7,7 @@
     <!-- Title -->
     <div class="text-center mb-8">
       <h2 class="text-3xl font-bold text-gray-800">Image Gallery</h2>
-      <p class="mt-2 text-gray-600">Explore our gallery below. Click on an image to view it in a slideshow.</p>
+      <p class="mt-2 text-gray-600">Explore my gallery below. Click on an image to view it in a slideshow.</p>
     </div>
 
     <!-- Image Gallery -->
@@ -22,7 +24,7 @@
       </div>
       <!-- Image 3 -->
       <div class="group">
-        <img src="{% static 'images/fel14.jpg' %}" alt="Nature Walk" class="w-full h-48 object-cover rounded-lg shadow-md transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer">
+        <img src="{% static 'images/Fel14.jpg' %}" alt="Nature Walk" class="w-full h-48 object-cover rounded-lg shadow-md transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer">
         <h3 class="mt-2 text-center text-sm font-medium text-gray-700">Captured during a nature walk.</h3>
       </div>
       <!-- Image 4 -->
@@ -89,7 +91,7 @@
       </div>
 
       <div class="group">
-        <img src="{% static 'images/f19.jpg' %}" alt="Sports Event" class="w-full h-48 object-cover rounded-lg shadow-md transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer">
+        <img src="{% static 'images/f21.jpg' %}" alt="Sports Event" class="w-full h-48 object-cover rounded-lg shadow-md transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer">
         <h3 class="mt-2 text-center text-sm font-medium text-gray-700">A thrilling sports event with the team.</h3>
       </div>
 
@@ -99,7 +101,7 @@
       </div>
 
       <div class="group">
-        <img src="{% static 'images/f155.jpg' %}" alt="Sports Event" class="w-full h-48 object-cover rounded-lg shadow-md transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer">
+        <img src="{% static 'images/f55.jpg' %}" alt="Sports Event" class="w-full h-48 object-cover rounded-lg shadow-md transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer">
         <h3 class="mt-2 text-center text-sm font-medium text-gray-700">A thrilling sports event with the team.</h3>
       </div>
 
@@ -146,3 +148,5 @@
     });
   });
 </script>
+{% include "footer.html" %}
+{% endblock content %}

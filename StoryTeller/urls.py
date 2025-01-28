@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import ContactusPage, blog, me,index,signup,loginpage,logoutuser,Portfolio,events,gallery,about
+from .views import ContactusPage, blog, me,index,signup,loginpage,AdminsDashboard,logoutuser,Portfolio,events,gallery,about
 urlpatterns = [
     path('',me,name='me' ),
     path('index/',index,name='index' ),
@@ -13,5 +13,6 @@ urlpatterns = [
     path("events/",events, name="events"),
     path("about/", about, name="about"),
     path("gallery/", gallery, name="gallery"),
+    path("admins/", AdminsDashboard, name="admins"),
 
 ]

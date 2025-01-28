@@ -1,0 +1,87 @@
+{% extends "header.html" %}
+{% block content %}
+
+<script src="https://cdn.tailwindcss.com"></script>
+<div class="sm:ml-64">
+    <div class="p-2 border-2">
+        <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+
+            <p class="text-center"><b><u>Contact Information</u></b></p>
+
+            <div class="mx-auto max-w-screen-full px-4 lg:px-12">
+                <!-- Start coding here -->
+                <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-4 py-3">Name</th>
+                                    <th scope="col" class="px-4 py-3">Email</th>
+                                    <th scope="col" class="px-4 py-3">Phone</th>
+                                    <th scope="col" class="px-4 py-3">Message</th>
+                                    <th scope="col" class="px-4 py-3">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for contact in contactinfo %}
+                                <tr class="border-b dark:border-gray-700">
+                                    <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ contact.name }}</th>
+                                    <td class="px-4 py-3">{{ contact.email }}</td>
+                                    <td class="px-4 py-3">{{ contact.phone }}</td>
+                                    <td class="px-4 py-3">{{ contact.message }}</td>
+                                    <td class="px-4 py-3 flex items-center justify-end">
+                                        <button type="button" class="text-white bg-green-500 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 font-small rounded-full text-sm px-2 py-1 text-center me-1 mb-1 dark:bg-blue-300 dark:hover:bg-blue-400 dark:focus:ring-blue-500">
+                                            <a href="#">View</a>
+                                        </button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <br>
+    <br>
+    <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+
+        <p class="text-center"><b><u>Users Information</u></b></p>
+
+        <div class="mx-auto max-w-screen-full px-4 lg:px-12">
+            <!-- Start coding here -->
+            <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-4 py-3">Name</th>
+                                <th scope="col" class="px-4 py-3">ProfilePic</th>
+                                <th scope="col" class="px-4 py-3">gender</th>
+                                <th scope="col" class="px-4 py-3">email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in userinfo %}
+                            <tr class="border-b dark:border-gray-700">
+                                <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ user.name }}</th>
+                                <td class="px-4 py-3">{{ user.profilepic }}</td>
+                                <td class="px-4 py-3">{{ user.gender }}</td>
+                                <td class="px-4 py-3">{{ user.email }}</td>
+                                <td class="px-4 py-3 flex items-center justify-end">
+                                    <button type="button" class="text-white bg-green-500 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 font-small rounded-full text-sm px-2 py-1 text-center me-1 mb-1 dark:bg-blue-300 dark:hover:bg-blue-400 dark:focus:ring-blue-500">
+                                        <a href="#">View</a>
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% include "footer.html" %}
+{% endblock content %}
